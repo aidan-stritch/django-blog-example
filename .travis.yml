@@ -1,6 +1,9 @@
 language: python
 python:
     - "3.7.3"
-install: "pip install -r requirements.txt"
+before_install:
+    - chmod +x manage.py 
+install: 
+    - "pip install -r requirements.txt"
 script: 
-    - SECRET_KEY="whatever" manage.py test
+    - SECRET_KEY="whatever" python manage.py test
